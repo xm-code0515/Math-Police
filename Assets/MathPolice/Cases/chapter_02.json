@@ -1,0 +1,468 @@
+{
+  "id": "chapter_02",
+  "title": {
+    "zh": "消失的五百万",
+    "en": "The Missing Five Million"
+  },
+  "summary": {
+    "zh": "3名嫌疑人中只有一名犯人；关键供词恰好1真2假。",
+    "en": "Exactly one culprit among 3 suspects. Exactly 1 key statements are true."
+  },
+  "suspectCount": 3,
+  "truthCount": 1,
+  "culpritIndex": 1,
+  "suspects": [
+    {
+      "name": {
+        "zh": "诺亚",
+        "en": "Noah"
+      },
+      "gender": "male",
+      "testimony": {
+        "zh": "米娅绝对不是抢走五百万的人。",
+        "en": "Mia definitely did not steal the five million."
+      },
+      "rule": {
+        "kind": "culpritIsNot",
+        "target": 1
+      }
+    },
+    {
+      "name": {
+        "zh": "米娅",
+        "en": "Mia"
+      },
+      "gender": "female",
+      "testimony": {
+        "zh": "抢走五百万的人是里奥。",
+        "en": "Leo stole the five million."
+      },
+      "rule": {
+        "kind": "culpritIs",
+        "target": 2
+      }
+    },
+    {
+      "name": {
+        "zh": "里奥",
+        "en": "Leo"
+      },
+      "gender": "male",
+      "testimony": {
+        "zh": "抢劫犯就在诺亚和米娅两个人之中。",
+        "en": "The robber is either Noah or Mia."
+      },
+      "rule": {
+        "kind": "any",
+        "terms": [
+          {
+            "kind": "culpritIs",
+            "target": 0
+          },
+          {
+            "kind": "culpritIs",
+            "target": 1
+          }
+        ]
+      }
+    }
+  ],
+  "script": [
+    {
+      "role": "narrator",
+      "stage": "narration",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "旁白",
+        "en": "Narrator"
+      },
+      "text": {
+        "zh": "你的推理能力在上次的案件中被警长认可，从而被正式任命为办案助手。",
+        "en": "The Chief recognized your reasoning skills in the last case and officially appointed you as his investigative assistant."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "narrator",
+      "stage": "narration",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "旁白",
+        "en": "Narrator"
+      },
+      "text": {
+        "zh": "几天后，你收到了警长的电话，听得出来他现在十分焦虑，明显是遇见了棘手的案件，他强烈要求你前往警局协助办案，于是你赶忙来到了警局。",
+        "en": "A few days later, the Chief calls. His anxious voice makes it clear that he has another difficult case. He urgently asks for your help, so you hurry to the station."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "警长？你看起来好像遇到大麻烦了。",
+        "en": "Chief? You look as though you are in serious trouble."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "你来得正好。这次的案子，可比上次严重多了。",
+        "en": "You came at the right time. This case is much more serious than the last one."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "今天上午，中央银行发生了一起抢劫案。",
+        "en": "Central Bank was robbed this morning."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "一个戴着面罩的人突然闯进银行，威胁工作人员打开现金储藏室。几分钟后，他带着整整五百万现金逃走了。",
+        "en": "A masked person burst into the bank and threatened the staff into opening the cash vault. Minutes later, the robber escaped with five million in cash."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "银行抢劫？！五百万？！",
+        "en": "A bank robbery?! Five million?!"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "而且整个过程里，抢劫犯一直戴着面罩。监控拍到了他的身影，却完全没有拍到脸。",
+        "en": "The robber kept the mask on the whole time. The cameras captured a figure, but never a face."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "那不是根本不知道是谁吗？这怎么查？",
+        "en": "Then we have no idea who it is! How can we investigate?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "一开始确实是这样。不过我们沿着逃跑路线调查后，还是找到了三名非常可疑的人。",
+        "en": "That was true at first. But following the escape route led us to three very suspicious people."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "诺亚、米娅，还有里奥。案发的时候，他们都在银行附近出现过，而且三个人给出的解释，都有些可疑。",
+        "en": "Noah, Mia, and Leo. All three were near the bank at the time, and their explanations are rather suspicious."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "那监控没有拍到更多线索吗？",
+        "en": "Did the cameras show any more clues?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "抢劫犯离开银行后，很快进入了一条没有监控的小巷。等我们赶到的时候，人已经不见了。",
+        "en": "After leaving the bank, the robber quickly entered an alley without cameras. By the time we arrived, the robber was gone."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "不过这一次和上次一样，我们已经通过其他调查确认了两件重要的事情。",
+        "en": "But, just like last time, our other investigations have established two important facts."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "什么？又是只有一个人说的是真话……",
+        "en": "What? Again, only one person is telling the truth..."
+      },
+      "expression": "thinking"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "别急。这一次可没有上一次那么简单。有的人说的是某个人，有的人说的却是一个范围。",
+        "en": "Don't rush. This isn't as simple as last time. Some name one person, while others describe a group of possible culprits."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "我们把三个人的供词都听完，再判断谁在撒谎。",
+        "en": "Let's hear all three statements before deciding who is lying."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 0,
+      "speaker": {
+        "zh": "诺亚",
+        "en": "Noah"
+      },
+      "text": {
+        "zh": "我已经说过很多遍了。银行被抢的时候，我确实在附近。但那附近有咖啡店、有商场，难道经过那里的人全都是抢劫犯吗？",
+        "en": "I have said this many times. I was near the bank, but there are cafes and shops there. Is everyone who walks past a robber?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 0,
+      "speaker": {
+        "zh": "诺亚",
+        "en": "Noah"
+      },
+      "text": {
+        "zh": "而且我觉得你们调查错方向了。至少有一个人，米娅，我敢肯定不是她。你们要查，就去查另外的人吧。",
+        "en": "I think you're looking in the wrong direction. There is one person I'm sure about: Mia. It definitely wasn't her. Go investigate someone else."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 0,
+      "speaker": {
+        "zh": "诺亚",
+        "en": "Noah"
+      },
+      "text": {
+        "zh": "米娅绝对不是抢走五百万的人。",
+        "en": "Mia definitely did not steal the five million."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "米娅",
+        "en": "Mia"
+      },
+      "text": {
+        "zh": "为什么一直问我？我只是去附近买东西而已。我甚至都没有进过那家银行。",
+        "en": "Why keep questioning me? I was only shopping nearby. I never even went inside the bank."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "米娅",
+        "en": "Mia"
+      },
+      "text": {
+        "zh": "不过……我倒是觉得有个人很奇怪。案发以后，我看到里奥从银行附近的小巷方向走出来。",
+        "en": "But... Someone did seem strange. After the robbery, I saw Leo coming from the direction of an alley near the bank."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "米娅",
+        "en": "Mia"
+      },
+      "text": {
+        "zh": "抢走五百万的人是里奥。",
+        "en": "Leo stole the five million."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "米娅",
+        "en": "Mia"
+      },
+      "text": {
+        "zh": "你们与其一直问我，不如问问他为什么在那里。",
+        "en": "Instead of questioning me, ask why he was there."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "里奥",
+        "en": "Leo"
+      },
+      "text": {
+        "zh": "等等。她看到我从附近经过就能说明我是抢劫犯？那条街每天有那么多人！",
+        "en": "Wait. She saw me passing nearby, and that makes me a robber? So many people use that street every day!"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "里奥",
+        "en": "Leo"
+      },
+      "text": {
+        "zh": "不过有一点，我可以告诉你们。真正的抢劫犯根本不可能是我。如果你们真的调查对了这三个人……所以别再把时间浪费在我身上了。",
+        "en": "But I can tell you one thing. I cannot possibly be the robber. If you really have the right three suspects... So stop wasting your time on me."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "里奥",
+        "en": "Leo"
+      },
+      "text": {
+        "zh": "抢劫犯就在诺亚和米娅两个人之中。",
+        "en": "The robber is either Noah or Mia."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "这就是他们最关键的三句话。你看看你能找出真正的犯人吗？",
+        "en": "Those are their three key statements. Can you work out who the real robber is?"
+      },
+      "expression": "normal"
+    }
+  ],
+  "explanation": {
+    "zh": "假设诺亚是劫匪，诺亚和里奥的话都为真；假设里奥是劫匪，诺亚和米娅的话都为真，都不符合只有一句真话。只有米娅是劫匪时，三句供词依次为假、假、真。因此劫匪是米娅。",
+    "en": "If Noah were the robber, Noah and Leo would both tell the truth. If Leo were the robber, Noah and Mia would both tell the truth. Only Mia gives false, false, true—exactly one true statement. Mia is the robber."
+  }
+}

@@ -1,0 +1,855 @@
+{
+  "id": "chapter_04",
+  "title": {
+    "zh": "消失的极光芯片",
+    "en": "The Missing Aurora Chip"
+  },
+  "summary": {
+    "zh": "3名嫌疑人中只有一名犯人；关键供词恰好2真1假。",
+    "en": "Exactly one culprit among 3 suspects. Exactly 2 key statements are true."
+  },
+  "suspectCount": 3,
+  "truthCount": 2,
+  "culpritIndex": 1,
+  "suspects": [
+    {
+      "name": {
+        "zh": "欧文",
+        "en": "Owen"
+      },
+      "gender": "male",
+      "testimony": {
+        "zh": "埃文不是偷走极光芯片的人。",
+        "en": "Evan did not steal the Aurora Chip."
+      },
+      "rule": {
+        "kind": "culpritIsNot",
+        "target": 2
+      }
+    },
+    {
+      "name": {
+        "zh": "妮娜",
+        "en": "Nina"
+      },
+      "gender": "female",
+      "testimony": {
+        "zh": "偷走芯片的人，是欧文或者埃文。",
+        "en": "Either Owen or Evan stole the chip."
+      },
+      "rule": {
+        "kind": "any",
+        "terms": [
+          {
+            "kind": "culpritIs",
+            "target": 0
+          },
+          {
+            "kind": "culpritIs",
+            "target": 2
+          }
+        ]
+      }
+    },
+    {
+      "name": {
+        "zh": "埃文",
+        "en": "Evan"
+      },
+      "gender": "male",
+      "testimony": {
+        "zh": "如果欧文没有偷芯片，那么偷芯片的人就是妮娜。",
+        "en": "If Owen did not steal the chip, then Nina did."
+      },
+      "rule": {
+        "kind": "implies",
+        "terms": [
+          {
+            "kind": "culpritIsNot",
+            "target": 0
+          },
+          {
+            "kind": "culpritIs",
+            "target": 1
+          }
+        ]
+      }
+    }
+  ],
+  "script": [
+    {
+      "role": "narrator",
+      "stage": "narration",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "旁白",
+        "en": "Narrator"
+      },
+      "text": {
+        "zh": "距离上次的案件已经过去两个月了，今天在回家的路上，你恰巧路过警局，想着拜访一下许久未见的“老朋友“。却没想到刚一进门又看到警长在一堆档案面前发呆。",
+        "en": "Two months have passed since the last case. On your way home, you happen to pass the station and decide to visit your old friend. But as soon as you enter, you see the Chief staring blankly at a pile of case files again."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "警长！这次又在查什么案子？",
+        "en": "Chief! What case are you investigating now?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "好久不见，你来得正好。这次丢的东西虽然没有黄金面具那么大……可麻烦一点也不小。",
+        "en": "Long time no see. You're just in time. The missing item is smaller than the golden mask... but the trouble is just as big."
+      },
+      "expression": "smile"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "丢了什么？",
+        "en": "What went missing?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "这个，它叫“极光芯片”，是研究团队刚刚完成的实验型芯片",
+        "en": "This is the Aurora Chip, an experimental chip the research team has just completed."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "可别看它小，里面可保存着非常重要的研究资料。",
+        "en": "Don't be fooled by its size. It contains extremely important research data."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "它被偷了？",
+        "en": "Was it stolen?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "没错，今天下午四点十二分，科技中心突然响起紧急疏散警报。工作人员和游客全部按照规定撤离展厅。",
+        "en": "Exactly. At 4:12 this afternoon, an emergency evacuation alarm sounded at the technology center. Staff and visitors left the hall as instructed."
+      },
+      "expression": "smile"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "真的发生危险了吗？",
+        "en": "Was there real danger?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "没有。后来检查发现，那只是一次人为触发的错误警报。而且从警报响起，到工作人员返回展示室只有大约三分钟。",
+        "en": "No. We later found that someone had deliberately triggered a false alarm. Only about three minutes passed before the staff returned to the exhibition room."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "人为触发？",
+        "en": "Deliberately?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "对，可就是这短短三分钟里，极光芯片消失了。",
+        "en": "Yes. But in those three short minutes, the Aurora Chip disappeared."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "只有三分钟……犯人应该很熟悉展馆吧？",
+        "en": "Only three minutes... The thief must know the building well."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "至少，他知道自己应该去哪里。不过这次，我们有一样很重要的东西——门禁记录。",
+        "en": "At least, the thief knew where to go. But this time, we have something very important. The access logs."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "警报期间，普通游客都已经离开。但有三个人拥有工作人员门禁卡，可以进入展示区域。",
+        "en": "Ordinary visitors had left during the alarm. But three people had staff access cards that could open the display area."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "第一个，欧文。他是极光芯片研究团队的一名工程师。",
+        "en": "First, Owen. He's an engineer on the Aurora Chip research team."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "整个科技展期间，他一直负责检查芯片展示设备。",
+        "en": "Throughout the exhibition, he was responsible for checking the chip's display equipment."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "芯片就是他们团队做的？",
+        "en": "His team made the chip?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "没错，所以他不仅知道芯片放在哪里……也非常熟悉展示柜的结构。",
+        "en": "Exactly. He knew where it was... And he knew the display case's construction very well."
+      },
+      "expression": "smile"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "那他的嫌疑确实不小。",
+        "en": "That does make him suspicious."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "第二个，妮娜。她是一名科技记者，当天她得到特别许可，可以进入工作人员区域拍摄和采访。",
+        "en": "Second, Nina. She is a technology reporter with special permission to enter staff areas for photographs and interviews."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "记者也有门禁卡？",
+        "en": "A reporter had an access card?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "临时门禁卡，而且警报响起之前，她刚刚采访完研究团队，也就是说，当时她离极光芯片所在的展示室并不远。",
+        "en": "A temporary one. She had just interviewed the researchers before the alarm. She was not far from the room displaying the chip."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "第三个，埃文。他是科技中心的安全设备技术员，平时负责门禁、警报和部分监控设备的维护。",
+        "en": "Third, Evan. He is the center's security equipment technician. He maintains the access system, alarms and some of the cameras."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "那他不是正好懂这些设备？",
+        "en": "Then he knows exactly how those systems work?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "没错，所以我们当然调查了他。但光凭这一点，还不能证明是他做的。",
+        "en": "Exactly. Of course we investigated him. But that alone does not prove he did it."
+      },
+      "expression": "smile"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "不过这次，你可不能直接按照以前的办法来。",
+        "en": "But this time, you cannot simply follow the old pattern."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "这一次三个人的关键供词中，恰好有两个人说了真话。",
+        "en": "This time, exactly two of the three suspects' key statements are true."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "也就是：两句是真的，一句是假的。那以前的方法不能直接套了。",
+        "en": "So two are true and one is false. We can't just copy the previous cases."
+      },
+      "expression": "thinking"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "这就是调查时最容易犯的错误。不要因为前几个案子的规则一样，就以为所有案件的规则都一样。",
+        "en": "That's an easy mistake to make. Don't assume every case follows the same rules just because the previous ones did."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "推理之前，先看清楚我们真正知道的条件。",
+        "en": "Before reasoning, be clear about the facts we actually know."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 0,
+      "speaker": {
+        "zh": "欧文",
+        "en": "Owen"
+      },
+      "text": {
+        "zh": "我已经解释过了，我是极光芯片的工程师，这一点没错，我也确实知道怎么打开那个展示柜。",
+        "en": "I have explained this already. Yes, I am an engineer on the Aurora Chip team. And yes, I know how to open that display case."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 0,
+      "speaker": {
+        "zh": "欧文",
+        "en": "Owen"
+      },
+      "text": {
+        "zh": "但难道因为我知道怎么开，就一定是我偷的吗？如果我真的想偷这枚芯片，为什么还要等到科技展的时候？",
+        "en": "Knowing how to open it means I stole it? If I wanted the chip, why would I wait until the exhibition?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "interrogation",
+      "suspectIndex": 0,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "那你认为是谁拿走的？",
+        "en": "Then who do you think took it?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 0,
+      "speaker": {
+        "zh": "欧文",
+        "en": "Owen"
+      },
+      "text": {
+        "zh": "我不知道是谁。埃文肯定不是偷走极光芯片的人，至少这一点，我很确定",
+        "en": "I don't know who did it. Evan definitely isn't the person who stole the Aurora Chip. I'm certain of that much."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 0,
+      "speaker": {
+        "zh": "欧文",
+        "en": "Owen"
+      },
+      "text": {
+        "zh": "埃文不是偷走极光芯片的人。",
+        "en": "Evan did not steal the Aurora Chip."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "妮娜",
+        "en": "Nina"
+      },
+      "text": {
+        "zh": "我知道你们怀疑我，毕竟我的临时门禁卡确实可以打开工作人员通道。",
+        "en": "I know you suspect me. My temporary card can open the staff passage, after all."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "而且警报响起的时候，你就在附近。",
+        "en": "And you were nearby when the alarm sounded."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "妮娜",
+        "en": "Nina"
+      },
+      "text": {
+        "zh": "没错，但附近的人可不只有我。如果你们一定认为犯人就在我们三个里面……那我觉得真正该调查的是他们两个。",
+        "en": "Yes. But I was not the only one nearby. If you insist the thief is one of us three... Then those two are the ones you should investigate."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "妮娜",
+        "en": "Nina"
+      },
+      "text": {
+        "zh": "偷走芯片的人，是欧文或者埃文。",
+        "en": "Either Owen or Evan stole the chip."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "埃文",
+        "en": "Evan"
+      },
+      "text": {
+        "zh": "所以现在因为我是安全设备技术员……所有人就觉得警报也是我弄的？",
+        "en": "So because I am the security equipment technician... Everyone thinks I triggered the alarm too?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "我们没有这么说。",
+        "en": "We did not say that."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "埃文",
+        "en": "Evan"
+      },
+      "text": {
+        "zh": "可你们显然都这么想。",
+        "en": "But that is clearly what you think."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "埃文",
+        "en": "Evan"
+      },
+      "text": {
+        "zh": "那我也告诉你们一句话。如果欧文没有偷芯片，那么偷芯片的人就是妮娜。你们可以自己判断。",
+        "en": "Then let me tell you something too. If Owen did not steal the chip, then Nina did. Judge for yourselves."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "埃文",
+        "en": "Evan"
+      },
+      "text": {
+        "zh": "如果欧文没有偷芯片，那么偷芯片的人就是妮娜。",
+        "en": "If Owen did not steal the chip, then Nina did."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "“欧文或者埃文”…… 我们以前好像还没有专门遇到过这种说法。",
+        "en": "\"Owen or Evan\"... We have not really examined a statement like that before."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "没错。我们要注意一个新的词。‘或者’",
+        "en": "Exactly. We need to pay attention to a new word: \"or.\""
+      },
+      "expression": "smile"
+    },
+    {
+      "role": "officer",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "假设我说——“犯人是欧文或者埃文。”",
+        "en": "Suppose I say, 'The culprit is Owen or Evan.'"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "这句话的意思是……",
+        "en": "That means..."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "犯人只要是欧文或者埃文中的一个，这句话就是真的？",
+        "en": "If the thief is either Owen or Evan, the statement is true?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "对。如果犯人是欧文——真。",
+        "en": "Exactly. If the culprit is Owen—true."
+      },
+      "expression": "smile"
+    },
+    {
+      "role": "officer",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "如果犯人是埃文——也是真。",
+        "en": "If the culprit is Evan—also true."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "只有犯人既不是欧文，也不是埃文的时候，这句话才是假话。",
+        "en": "It's false only when the culprit is neither Owen nor Evan."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "不过在这个案子里，我们已经知道犯人只有一个。",
+        "en": "But in this case, we already know there is only one thief."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "明白了。",
+        "en": "Understood."
+      },
+      "expression": "smile"
+    }
+  ],
+  "explanation": {
+    "zh": "若欧文是犯人，三句供词全为真；若埃文是犯人，只有妮娜的话为真。只有妮娜是犯人时，三句供词依次为真、假、真，恰好两真一假。因此犯人是妮娜。",
+    "en": "If Owen were guilty, all three statements would be true. If Evan were guilty, only Nina’s statement would be true. Only Nina gives true, false, true—exactly two true statements. Nina stole the chip."
+  }
+}

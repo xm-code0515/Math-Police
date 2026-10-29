@@ -1,0 +1,1192 @@
+{
+  "id": "chapter_05",
+  "title": {
+    "zh": "午夜拍卖会凶案",
+    "en": "Murder at the Midnight Auction"
+  },
+  "summary": {
+    "zh": "4名嫌疑人中只有一名犯人；关键供词恰好2真2假。",
+    "en": "Exactly one culprit among 4 suspects. Exactly 2 key statements are true."
+  },
+  "suspectCount": 4,
+  "truthCount": 2,
+  "culpritIndex": 3,
+  "suspects": [
+    {
+      "name": {
+        "zh": "丹尼尔",
+        "en": "Daniel"
+      },
+      "gender": "male",
+      "testimony": {
+        "zh": "杀害霍华德先生的人不是我。",
+        "en": "I did not kill Mr. Howard Grey."
+      },
+      "rule": {
+        "kind": "culpritIsNot",
+        "target": 0
+      }
+    },
+    {
+      "name": {
+        "zh": "维拉",
+        "en": "Vera"
+      },
+      "gender": "female",
+      "testimony": {
+        "zh": "如果科尔不是凶手，那么凶手就是黛安娜。",
+        "en": "If Cole is not the killer, then Diana is."
+      },
+      "rule": {
+        "kind": "implies",
+        "terms": [
+          {
+            "kind": "culpritIsNot",
+            "target": 2
+          },
+          {
+            "kind": "culpritIs",
+            "target": 3
+          }
+        ]
+      }
+    },
+    {
+      "name": {
+        "zh": "科尔",
+        "en": "Cole"
+      },
+      "gender": "male",
+      "testimony": {
+        "zh": "杀害霍华德先生的人就是维拉。",
+        "en": "Vera killed Mr. Howard Grey."
+      },
+      "rule": {
+        "kind": "culpritIs",
+        "target": 1
+      }
+    },
+    {
+      "name": {
+        "zh": "黛安娜",
+        "en": "Diana"
+      },
+      "gender": "female",
+      "testimony": {
+        "zh": "凶手是维拉或者科尔。",
+        "en": "The killer is either Vera or Cole."
+      },
+      "rule": {
+        "kind": "any",
+        "terms": [
+          {
+            "kind": "culpritIs",
+            "target": 1
+          },
+          {
+            "kind": "culpritIs",
+            "target": 2
+          }
+        ]
+      }
+    }
+  ],
+  "script": [
+    {
+      "role": "narrator",
+      "stage": "narration",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "旁白",
+        "en": "Narrator"
+      },
+      "text": {
+        "zh": "一大早你就被警长的电话叫醒，警长的语气听起来非常疲惫，从他的口中，你得知市里出了大事，现在急需你的帮助。于是，你挂了电话后急急忙忙的赶往警局。",
+        "en": "The Chief's call wakes you early. He sounds exhausted. Something serious has happened in the city, and he urgently needs your help. You hang up and hurry to the station."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "警长……你昨晚是不是又忙了一整夜？",
+        "en": "Chief... Were you working all night again?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "差不多吧。昨晚发生了一起很严重的案子。",
+        "en": "More or less. A very serious case came up last night."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "这次的案子……好像和平时不太一样。",
+        "en": "This case... Seems different from the others."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "确实不一样。",
+        "en": "It is."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "这个人叫霍华德·格雷。是一名很有名的收藏家。",
+        "en": "This man is Howard Grey, a well-known collector."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "我好像在新闻上见过他。",
+        "en": "I think I have seen him on the news."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "昨晚，他在皇家大酒店举办了一场慈善拍卖会。可拍卖会还没有结束……",
+        "en": "Last night, he hosted a charity auction at the Royal Hotel. But before the auction had ended..."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "他就在酒店二楼的私人休息室里遇害了。",
+        "en": "He was murdered in a private lounge on the hotel's second floor."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "遇害？",
+        "en": "Killed?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "昨晚九点二十五分左右，酒店工作人员发现了他。我们已经确认，这不是意外。",
+        "en": "Hotel staff found him at about 9:25 last night. We have confirmed it was no accident."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "那知道他是什么时候遇害的吗？",
+        "en": "Do you know when he was killed?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "经过昨晚的现场调查……遇害时间大约在晚上九点十分到九点二十分之间。",
+        "en": "From last night's investigation... The time of death was between about 9:10 and 9:20 p.m."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "只有十分钟？",
+        "en": "Only ten minutes?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "对。而这十分钟，就是整个案件最关键的地方。",
+        "en": "Yes. Those ten minutes are the key to the whole case."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "酒店没有监控吗？",
+        "en": "Doesn't the hotel have cameras?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "有，也正因为有监控，我们才能经过一夜调查，把范围缩小到四个人。",
+        "en": "It does. Thanks to the footage and a night of investigation, we narrowed the suspects down to four."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "拍卖会进行期间，大部分客人都待在一楼宴会厅。但是在霍华德先生遇害的那十分钟里……有四个人曾经离开宴会厅，并进入二楼的私人区域。",
+        "en": "Most guests stayed in the first-floor banquet hall during the auction. But in those ten minutes... Four people left it and entered the private area upstairs."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "所以这四个人都有机会去休息室？",
+        "en": "So all four had a chance to reach the lounge?"
+      },
+      "expression": "thinking"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "没错。而且我们检查了昨晚的所有监控和出入记录。目前没有发现第五个人进入那片区域。",
+        "en": "Exactly. We checked all the footage and access records. We found no fifth person entering that area."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "第一个，丹尼尔。他是霍华德先生多年的生意伙伴。",
+        "en": "First, Daniel. He was Mr. Grey's business partner for many years."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "他们关系不好吗？",
+        "en": "Did they have a bad relationship?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "至少最近不太好。昨晚拍卖会开始之前，两个人曾经因为一份合作合同发生争执。",
+        "en": "Recently, at least. Before last night's auction, they argued over a business contract."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "有人看到了？",
+        "en": "Did anyone see it?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "很多人都看到了。而在晚上九点十五分左右，丹尼尔也曾离开宴会厅。",
+        "en": "Many people did. Daniel also left the banquet hall at about 9:15 p.m."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "正好在遇害时间里。",
+        "en": "Right in the time of the murder."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "对。",
+        "en": "Yes."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "第二个，维拉。霍华德先生的私人助理。她负责霍华德先生的行程、文件和拍卖会安排，所以她对酒店二楼的私人区域非常熟悉。",
+        "en": "Second, Vera. Mr. Grey's personal assistant. She managed his schedule, documents and auction arrangements. She knew the hotel's private upstairs area very well."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "她那时候也离开宴会厅了吗？",
+        "en": "Did she leave the banquet hall then too?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "晚上九点十二分。她说自己只是去二楼取一份文件。",
+        "en": "At 9:12 p.m. She says she only went upstairs to collect a document."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "有人能证明吗？",
+        "en": "Can anyone confirm that?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "没有。",
+        "en": "No."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "第三个，科尔。是一名古董商。",
+        "en": "Third, Cole. An antiques dealer."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "他和霍华德先生是什么关系？",
+        "en": "How did he know Mr. Grey?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "两个人认识很多年，但就在昨晚的拍卖会上，霍华德先生拒绝了科尔带来的一件藏品。",
+        "en": "They had known each other for years. But at last night's auction, Mr. Grey rejected an item Cole had brought."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "为什么？",
+        "en": "Why?"
+      },
+      "expression": "thinking"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "霍华德认为那件藏品的来历有问题。他们为这件事情吵了一架。",
+        "en": "Howard thought its provenance was questionable. They argued about it."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "所以科尔也有理由生气……",
+        "en": "So Cole had a reason to be angry too..."
+      },
+      "expression": "thinking"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "而且晚上九点十七分左右，他也去了二楼。",
+        "en": "And he went upstairs at about 9:17 p.m."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "最后一个，黛安娜。她是昨晚那场拍卖会聘请的古董鉴定师。",
+        "en": "Last, Diana. The antiques appraiser hired for last night's auction."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "鉴定师？",
+        "en": "An appraiser?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "拍卖会上的部分藏品，都需要经过她的鉴定。她和霍华德先生昨晚也发生过一些分歧。",
+        "en": "Some auction items needed her appraisal. She and Mr. Grey also had disagreements last night."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "她也去了二楼？",
+        "en": "She went upstairs too?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "晚上九点十四分，监控拍到她进入了私人区域。",
+        "en": "At 9:14 p.m. The cameras showed her entering the private area."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "四个人……这次比以前多了一个。",
+        "en": "Four people... One more than before."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "以前有三名嫌疑人，你只需要考虑三种可能。现在——你需要检查四种可能。",
+        "en": "With three suspects, you only had three possibilities to consider. Now you need to check four."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "经过现场调查和昨晚的询问，我们现在已经确认了一个非常重要的条件。",
+        "en": "The scene investigation and last night's questioning established a very important condition."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "四个人的关键供词中，恰好有两个人说了真话。",
+        "en": "Exactly two of the four people's key statements are true."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "也就是：两句真话，两句假话。",
+        "en": "So: two true statements and two false ones."
+      },
+      "expression": "thinking"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "还有一点，这一次没有新的逻辑规则教给你。",
+        "en": "One more thing: there are no new rules of logic to teach you this time."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "因为现在真正困难的已经不是认识新的词。",
+        "en": "The hard part now isn't learning new words."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "而是同时处理更多的信息。“或者”、“如果……那么……”，这些你都已经见过了。",
+        "en": "It's handling more information at once. You've already seen 'or' and 'if... then...'"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "这一次，你得自己把它们组合起来。",
+        "en": "This time, you need to put them together yourself."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 0,
+      "speaker": {
+        "zh": "丹尼尔",
+        "en": "Daniel"
+      },
+      "text": {
+        "zh": "没错。我和霍华德昨晚确实吵了一架，那是工作上的事情。",
+        "en": "Yes. Howard and I argued last night. It was about business."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 0,
+      "speaker": {
+        "zh": "丹尼尔",
+        "en": "Daniel"
+      },
+      "text": {
+        "zh": "因为一场争吵就把我当成杀人犯？你们最好还是认真调查其他人。",
+        "en": "One argument makes me a murderer? You'd do better to investigate the others properly."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "interrogation",
+      "suspectIndex": 0,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "所以你否认杀害霍华德？",
+        "en": "So you deny killing Howard?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 0,
+      "speaker": {
+        "zh": "丹尼尔",
+        "en": "Daniel"
+      },
+      "text": {
+        "zh": "杀害霍华德先生的人不是我。",
+        "en": "I did not kill Mr. Howard Grey."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 0,
+      "speaker": {
+        "zh": "丹尼尔",
+        "en": "Daniel"
+      },
+      "text": {
+        "zh": "我已经说得够清楚了。",
+        "en": "I have made myself clear enough."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "维拉",
+        "en": "Vera"
+      },
+      "text": {
+        "zh": "我跟了霍华德先生很多年，我没有理由害他。",
+        "en": "I worked for Mr. Grey for years. I had no reason to hurt him."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "可你在案发时间进入了二楼。",
+        "en": "But you went upstairs at the time of the murder."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "维拉",
+        "en": "Vera"
+      },
+      "text": {
+        "zh": "我是去取文件。我已经解释过很多遍了。",
+        "en": "I went to collect a document. I have explained that many times."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "维拉",
+        "en": "Vera"
+      },
+      "text": {
+        "zh": "不过……如果你们一定要从我们几个人里面找凶手，我可以告诉你们一件事。",
+        "en": "But... If you insist on looking for the killer among us, I can tell you one thing."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "维拉",
+        "en": "Vera"
+      },
+      "text": {
+        "zh": "如果科尔不是凶手，那么凶手就是黛安娜。",
+        "en": "If Cole is not the killer, then Diana is."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "维拉",
+        "en": "Vera"
+      },
+      "text": {
+        "zh": "你们自己去验证吧。",
+        "en": "Verify it yourselves."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "科尔",
+        "en": "Cole"
+      },
+      "text": {
+        "zh": "又是那件藏品！你们到底还要问我多少遍？",
+        "en": "That item again! How many times will you ask me about it?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "霍华德先生昨晚和你发生过争执。",
+        "en": "Mr. Grey argued with you last night."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "科尔",
+        "en": "Cole"
+      },
+      "text": {
+        "zh": "发生争执就代表我要杀人？我可以直接告诉你们。",
+        "en": "An argument means I wanted to kill him? I can tell you directly."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "科尔",
+        "en": "Cole"
+      },
+      "text": {
+        "zh": "杀害霍华德先生的人就是维拉。",
+        "en": "Vera killed Mr. Howard Grey."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "科尔",
+        "en": "Cole"
+      },
+      "text": {
+        "zh": "你们一直盯着我，根本就是查错方向了。",
+        "en": "You keep focusing on me. You are looking in completely the wrong direction."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 3,
+      "speaker": {
+        "zh": "黛安娜",
+        "en": "Diana"
+      },
+      "text": {
+        "zh": "看来现在每个人都在互相怀疑。",
+        "en": "It seems everyone suspects everyone else now."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "interrogation",
+      "suspectIndex": 3,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "包括你。",
+        "en": "Including you."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 3,
+      "speaker": {
+        "zh": "黛安娜",
+        "en": "Diana"
+      },
+      "text": {
+        "zh": "当然。但如果你让我从这些人里面判断……",
+        "en": "Of course. But if you ask me to judge these people..."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 3,
+      "speaker": {
+        "zh": "黛安娜",
+        "en": "Diana"
+      },
+      "text": {
+        "zh": "凶手是维拉或者科尔。",
+        "en": "The killer is either Vera or Cole."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 3,
+      "speaker": {
+        "zh": "黛安娜",
+        "en": "Diana"
+      },
+      "text": {
+        "zh": "至少我是这么认为的。",
+        "en": "At least, that is what I think."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "这次一下有四句话……",
+        "en": "Four statements at once this time..."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "所以不要试图一次全部想明白。还记得我们以前怎么做的吗？",
+        "en": "So do not try to solve everything at once. Remember what we did before?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "先假设一个人是凶手。然后一句一句判断真假。",
+        "en": "Assume one person is the killer. Then check each statement, one by one."
+      },
+      "expression": "thinking"
+    },
+    {
+      "role": "officer",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "没错。",
+        "en": "Exactly."
+      },
+      "expression": "normal"
+    }
+  ],
+  "explanation": {
+    "zh": "分别假设丹尼尔、维拉、科尔是凶手，真话数量为零句、三句、三句，都不符合条件。假设黛安娜是凶手时，四句供词依次为真、真、假、假，恰好两真两假。因此凶手是黛安娜。",
+    "en": "Assuming Daniel, Vera or Cole is guilty gives zero, three or three true statements respectively. If Diana is guilty, the statements are true, true, false, false—exactly two true statements. Diana is the killer."
+  }
+}

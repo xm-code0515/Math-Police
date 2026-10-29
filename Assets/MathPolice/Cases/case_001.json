@@ -1,0 +1,20 @@
+{
+  "id": "missing_medal",
+  "title": { "zh": "消失的奖章", "en": "The Missing Medal" },
+  "summary": { "zh": "警局展柜里的奖章不见了。三人中恰好有一名犯人，也恰好只有一人说真话。", "en": "A medal has vanished from the station. Exactly one of these three suspects is guilty, and exactly one tells the truth." },
+  "suspectCount": 3,
+  "truthCount": 1,
+  "culpritIndex": 0,
+  "suspects": [
+    { "gender":"male", "name": {"zh":"阿明","en":"Alex"}, "testimony":{"zh":"是小雨拿走了奖章。","en":"Blair took the medal."}, "rule":{"kind":"culpritIs","target":1} },
+    { "gender":"female", "name": {"zh":"小雨","en":"Blair"}, "testimony":{"zh":"我没有拿走奖章。","en":"I did not take the medal."}, "rule":{"kind":"culpritIsNot","target":1} },
+    { "gender":"male", "name": {"zh":"大伟","en":"Casey"}, "testimony":{"zh":"阿明是无辜的。","en":"Alex is innocent."}, "rule":{"kind":"culpritIsNot","target":0} }
+  ],
+  "introduction": [
+    {"role":"officer","expression":"smile2","playerExpression":"normal","speaker":{"zh":"警长","en":"Chief"},"text":{"zh":"欢迎来到警局，小侦探！今天有一枚奖章不见了，我需要你的帮助。","en":"Welcome, detective! A medal has gone missing, and I need your help."}},
+    {"role":"player","expression":"smile","officerExpression":"smile","speaker":{"zh":"你","en":"You"},"text":{"zh":"交给我吧！先听听大家怎么说。","en":"I'm ready! Let's hear what everyone has to say."}},
+    {"role":"officer","expression":"normal","playerExpression":"thinking","speaker":{"zh":"警长","en":"Chief"},"text":{"zh":"嫌疑人共有三位，其中只有一人是犯人，也只有一人说真话。其他两人的供词都是假话。","en":"There are three suspects. Exactly one is guilty. Only one testimony is true; the other two are false."}},
+    {"role":"officer","expression":"smile","speaker":{"zh":"警长","en":"Chief"},"text":{"zh":"左上角的本子会记录本案对话。里面的放大镜页可以画草稿、标记真假，帮助你推理。","en":"Your notebook keeps this case's dialogue. Use its investigation tab to sketch and mark your assumptions."}}
+  ],
+  "explanation": {"zh":"阿明和小雨的供词互相矛盾，所以两人中必有一人说真话。既然总共只有一人说真话，大伟说的“阿明是无辜的”一定是假话。因此犯人是阿明，小雨是唯一说真话的人。","en":"Alex and Blair contradict each other, so one of them must be truthful. With only one true testimony, Casey's claim that Alex is innocent must be false. Alex is guilty, and Blair alone tells the truth."}
+}

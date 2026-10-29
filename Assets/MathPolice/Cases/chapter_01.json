@@ -1,0 +1,474 @@
+{
+  "id": "chapter_01",
+  "tutorial": true,
+  "title": {
+    "zh": "失踪的蓝宝石项链",
+    "en": "The Missing Sapphire Necklace"
+  },
+  "summary": {
+    "zh": "3名嫌疑人中只有一名犯人；关键供词恰好1真2假。",
+    "en": "Exactly one culprit among 3 suspects. Exactly 1 key statements are true."
+  },
+  "suspectCount": 3,
+  "truthCount": 1,
+  "culpritIndex": 0,
+  "suspects": [
+    {
+      "name": {
+        "zh": "艾伦",
+        "en": "Alan"
+      },
+      "gender": "male",
+      "testimony": {
+        "zh": "项链不是我拿的。",
+        "en": "I did not take the necklace."
+      },
+      "rule": {
+        "kind": "culpritIsNot",
+        "target": 0
+      }
+    },
+    {
+      "name": {
+        "zh": "贝拉",
+        "en": "Bella"
+      },
+      "gender": "female",
+      "testimony": {
+        "zh": "项链是查理拿走的。",
+        "en": "Charlie took the necklace."
+      },
+      "rule": {
+        "kind": "culpritIs",
+        "target": 2
+      }
+    },
+    {
+      "name": {
+        "zh": "查理",
+        "en": "Charlie"
+      },
+      "gender": "male",
+      "testimony": {
+        "zh": "贝拉在说谎。",
+        "en": "Bella is lying."
+      },
+      "rule": {
+        "kind": "statementFalse",
+        "target": 1
+      }
+    }
+  ],
+  "script": [
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "奇怪……到底掉到哪里去了？我明明记得刚才还带在身上的……",
+        "en": "Strange... Where did I drop it? I am sure I had it with me a moment ago..."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "请问……你找的是这个笔记本吗？",
+        "en": "Excuse me... Is this the notebook you are looking for?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "我刚刚在路上捡到了这个，好像是一个办案笔记。",
+        "en": "I just found it on the street. It looks like an investigation notebook."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "啊！就是他！这里面记着不少案件资料，要是真的丢了，可就麻烦大了！",
+        "en": "Ah! That's it! There are so many case notes in here. Losing it would have been a disaster!"
+      },
+      "expression": "laugh"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "真的太谢谢你特意跑这一趟了！",
+        "en": "Thank you so much for coming all this way!"
+      },
+      "expression": "laugh"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "唉……笔记虽然找回来了……可眼前这个案子还是太让人头疼了。",
+        "en": "Sigh... The notebook is back... but this case is still giving me a terrible headache."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "发生什么案子了？",
+        "en": "What happened?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "今天傍晚，市区里的星光珠宝店丢失了一条非常昂贵的蓝宝石项链。",
+        "en": "This evening, a very expensive sapphire necklace went missing from Starlight Jewelry downtown."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "就是照片里的这条吗？",
+        "en": "The one in that picture?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "没错！我们已经找到了三个嫌疑人。可麻烦就在这里……展示柜没有被强行破坏。而且偏偏在项链失踪的那几分钟，店里的监控出现了故障。",
+        "en": "Exactly. We have found three suspects. But here is the problem... The display case was not forced open. And the security cameras failed during the very minutes when the necklace disappeared."
+      },
+      "expression": "smile"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "他们每个人都有自己的说法，有人说的可能是真话，而有人却在撒谎。我已经把他们的供词来来回回看了好几遍，还是没能确定到底是谁拿走了项链。",
+        "en": "They each have their own story. Some may be telling the truth, while others are lying. I've read their statements over and over, but I still can't tell who took the necklace."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "连你也不知道？那……我可以一起看看吗？",
+        "en": "Even you do not know? Then... Could I take a look too?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "你也想看？这可不是普通的案件，要是判断错了，就会冤枉到无辜的人。",
+        "en": "You want to look too? This is a serious case. A wrong judgment could accuse an innocent person."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "我知道！所以我不会乱猜的，我会把他们每个人说的话都仔细想一遍的。",
+        "en": "I know! I won't guess. I'll think carefully about everything they say."
+      },
+      "expression": "smile"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "……好吧，我现在确实也没有什么头绪，既然你想帮忙，那就一起看看吧",
+        "en": "...All right. I'm out of ideas at the moment. If you want to help, let's look at it together."
+      },
+      "expression": "smile"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "不过你可别瞎猜。如果你发现了什么，要告诉我你的推理思路。",
+        "en": "But no wild guesses. If you find something, explain your reasoning to me."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "没问题！",
+        "en": "No problem!"
+      },
+      "expression": "smile"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "那我们重新把整个案子梳理一遍，我们已经锁定了三名嫌疑人。",
+        "en": "Let's go through the whole case again. We have identified three suspects."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "第一个是艾伦。项链失踪前，他在珠宝柜前看了很久。第二个是贝拉。她当时正在旁边挑选戒指，也曾靠近过项链的展示柜。第三个是查理。他声称自己只是经过那里，不过店员记得他曾经在柜台附近停留。",
+        "en": "First, Alan. He spent a long time looking at the necklace. Bella was choosing rings nearby and also approached its display case. Third, Charlie. He says he was just passing through, but a clerk remembers him lingering near the counter."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "所以他们三个人都有机会拿走项链。",
+        "en": "So all three had a chance to take the necklace."
+      },
+      "expression": "thinking"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "没错。而且根据目前掌握的线索，我们还能确定一件非常重要的事。",
+        "en": "Exactly. And the clues let us establish one very important fact."
+      },
+      "expression": "smile"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "这三个人的关键供词里，只有一个人说了真话，另外两个人都在撒谎。",
+        "en": "Among their three key statements, only one is true. The other two are lies."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "我们再把他们的供词听一遍。",
+        "en": "Let's hear their statements again."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 0,
+      "speaker": {
+        "zh": "艾伦",
+        "en": "Alan"
+      },
+      "text": {
+        "zh": "你们已经问我好几遍了！我承认我确实看了那条项链很久，难道多看两眼就成小偷了吗？",
+        "en": "You've asked me this so many times! Yes, I looked at that necklace for a while. Does looking make me a thief?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 0,
+      "speaker": {
+        "zh": "艾伦",
+        "en": "Alan"
+      },
+      "text": {
+        "zh": "项链不是我拿的。你们还是去问问另外两个人吧。",
+        "en": "I did not take the necklace. Go ask the other two."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "贝拉",
+        "en": "Bella"
+      },
+      "text": {
+        "zh": "我当时一直在挑戒指，根本没想过什么项链。不过……我注意到查理在展示柜附近鬼鬼祟祟的。",
+        "en": "I was choosing a ring. I wasn't thinking about any necklace. But... I noticed Charlie acting suspiciously near the display case."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "贝拉",
+        "en": "Bella"
+      },
+      "text": {
+        "zh": "所以我觉得很明显——项链是查理拿走的，你们应该好好查查他才对！",
+        "en": "So I think it's obvious—Charlie took the necklace. You should investigate him!"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "查理",
+        "en": "Charlie"
+      },
+      "text": {
+        "zh": "等等她怎么能随便说是我？！我只是从那里经过而已！",
+        "en": "Wait! How can she just accuse me? I was only passing by!"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "查理",
+        "en": "Charlie"
+      },
+      "text": {
+        "zh": "她刚才说我偷了项链？那我告诉你们——贝拉在说谎。别被她骗了！",
+        "en": "She said I stole the necklace? Then let me tell you—Bella is lying. Do not let her fool you!"
+      },
+      "expression": "normal"
+    }
+  ],
+  "explanation": {
+    "zh": "贝拉说查理偷了项链，查理说贝拉在说谎，两句话恰好一真一假。既然只有一句真话，艾伦的“项链不是我拿的”必定为假。因此犯人是艾伦。",
+    "en": "Bella accuses Charlie, while Charlie says Bella is lying. Exactly one of these statements is true. With only one true statement in total, Alan’s denial must be false. Alan is the thief."
+  }
+}

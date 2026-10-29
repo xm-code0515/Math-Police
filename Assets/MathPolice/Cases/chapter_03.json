@@ -1,0 +1,743 @@
+{
+  "id": "chapter_03",
+  "title": {
+    "zh": "停电中的黄金面具",
+    "en": "The Golden Mask in the Blackout"
+  },
+  "summary": {
+    "zh": "3名嫌疑人中只有一名犯人；关键供词恰好1真2假。",
+    "en": "Exactly one culprit among 3 suspects. Exactly 1 key statements are true."
+  },
+  "suspectCount": 3,
+  "truthCount": 1,
+  "culpritIndex": 1,
+  "suspects": [
+    {
+      "name": {
+        "zh": "亚瑟",
+        "en": "Arthur"
+      },
+      "gender": "male",
+      "testimony": {
+        "zh": "黄金面具不是我偷的。",
+        "en": "I did not steal the golden mask."
+      },
+      "rule": {
+        "kind": "culpritIsNot",
+        "target": 0
+      }
+    },
+    {
+      "name": {
+        "zh": "莉莉",
+        "en": "Lily"
+      },
+      "gender": "female",
+      "testimony": {
+        "zh": "黄金面具不是我偷的，而且也不是马克偷的。",
+        "en": "Neither Mark nor I stole the golden mask."
+      },
+      "rule": {
+        "kind": "all",
+        "terms": [
+          {
+            "kind": "culpritIsNot",
+            "target": 1
+          },
+          {
+            "kind": "culpritIsNot",
+            "target": 2
+          }
+        ]
+      }
+    },
+    {
+      "name": {
+        "zh": "马克",
+        "en": "Mark"
+      },
+      "gender": "male",
+      "testimony": {
+        "zh": "如果亚瑟没有偷黄金面具，那么犯人就是我。",
+        "en": "If Arthur did not steal the golden mask, then I am the thief."
+      },
+      "rule": {
+        "kind": "implies",
+        "terms": [
+          {
+            "kind": "culpritIsNot",
+            "target": 0
+          },
+          {
+            "kind": "culpritIs",
+            "target": 2
+          }
+        ]
+      }
+    }
+  ],
+  "script": [
+    {
+      "role": "narrator",
+      "stage": "narration",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "旁白",
+        "en": "Narrator"
+      },
+      "text": {
+        "zh": "在连续解决珠宝店失窃案和银行抢劫案之后，警长更加仍可了你的推理能力。几天后，你又收到了警长的联络，关于这次的案件，警长可谓是抓耳挠腮，出于无奈，他再次请你来帮忙。",
+        "en": "After you solved the jewelry theft and bank robbery, the Chief has even more faith in your reasoning. A few days later, he calls again. This case has him completely stumped, so he asks for your help once more."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "警长？这次又发生什么事情了？",
+        "en": "Chief? What happened this time?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "你来了。这次又有棘手案子需要你的帮助了",
+        "en": "You're here. I have another difficult case that needs your help."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "这个……是博物馆里的展品吗？",
+        "en": "Is this... an exhibit from the museum?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "没错，这次是阿努比斯黄金面具。是这次最近古文明特别展览中最重要的展品之一。",
+        "en": "Yes, the Golden Mask of Anubis. It's one of the most important exhibits in the recent special exhibition on ancient civilizations."
+      },
+      "expression": "smile"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "就在昨天闭馆前，它不见了。",
+        "en": "It disappeared just before closing yesterday."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "又是盗窃案？",
+        "en": "Another theft?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "而且这次的情况有点特别。晚上七点五十八分，博物馆突然停电，整栋建筑一下子陷入了黑暗。",
+        "en": "And the circumstances are unusual this time. At 7:58 p.m., the museum lost power. The entire building went dark."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "停电时间持续了不到两分钟，等灯重新亮起来的时候……面具已经不见了。",
+        "en": "The blackout lasted less than two minutes. When the lights came back on... the mask was gone."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "所以犯人是在停电的时候动手的？",
+        "en": "So the thief acted during the blackout?"
+      },
+      "expression": "thinking"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "没错。这一点我们已经确定了。并且展柜完全没有遭到破坏，有人在停电的时候正常打开了它。",
+        "en": "Exactly. We've confirmed that. The display case wasn't damaged at all. Someone opened it normally during the blackout."
+      },
+      "expression": "smile"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "也就是说……犯人可能知道怎么打开展柜。",
+        "en": "In other words... The thief may have known how to open it."
+      },
+      "expression": "thinking"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "很有可能。根据我们的调查，停电发生的时候，有三个人最值得怀疑。",
+        "en": "Very likely. Our investigation points to three people who were there during the blackout."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "第一个，亚瑟。他是博物馆的展览管理员，平时负责检查展柜和展品，对博物馆里的设备非常熟悉。",
+        "en": "First, Arthur. He is the museum's exhibition manager. He checks the exhibits and display cases and knows the equipment well."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "那他应该也知道怎么打开展柜吧？",
+        "en": "Then he would know how to open the case?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "没错，所以从条件上来说，他确实有机会做到",
+        "en": "Exactly. He certainly had the means to do it."
+      },
+      "expression": "smile"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "第二个，莉莉。她是一名摄影师，最近受博物馆邀请，负责给这次古文明展览拍摄宣传照片。",
+        "en": "Second, Lily. She is a photographer hired by the museum to take publicity pictures for the ancient civilization exhibition."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "不过那天闭馆以后，她没有离开，她说自己留在展厅里，是为了整理相机和拍摄设备。",
+        "en": "But she didn't leave after closing that day. She says she stayed in the gallery to organize her camera and equipment."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "第三个，马克。他是负责当天晚间巡逻的保安，停电发生的时候，他正在展区附近做最后一轮巡逻。",
+        "en": "Third, Mark. He was the security guard on evening patrol. When the power went out, he was making his final round near the exhibits."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "也就是说……停电的时候，他们三个都有机会接近那个展厅。",
+        "en": "So... all three had an opportunity to approach the gallery during the blackout."
+      },
+      "expression": "thinking"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "没错，除了这三个人，我们暂时没有发现其他可疑人员。",
+        "en": "Exactly. We haven't found any other suspicious people."
+      },
+      "expression": "smile"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "现在麻烦的地方来了，我们分别询问了他们三个，但这一次，他们说的话比前两个案子复杂得多。",
+        "en": "Here's the problem. We questioned all three separately, but this time their statements are much more complicated than in the last two cases."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "什么意思？",
+        "en": "What do you mean?"
+      },
+      "expression": "thinking"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "以前我们听到的，大多是这种话。“不是我偷的。”或者——“是他偷的。",
+        "en": "Before, we mostly heard things like \"I did not steal it\" or \"That person stole it.\""
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "这一次，有人把两件事情放在了一句话里，还有人说了一句——‘如果……那么……’",
+        "en": "This time, someone puts two claims in one sentence. Someone else says, 'If... then...'"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "听起来确实麻烦了一点。",
+        "en": "That does sound a little harder."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "station",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "所以别急着下结论。还是老办法。把每一种可能都假设一遍。",
+        "en": "So don't jump to conclusions. Use our usual method: consider every possibility in turn."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 0,
+      "speaker": {
+        "zh": "亚瑟",
+        "en": "Arthur"
+      },
+      "text": {
+        "zh": "我在这个博物馆工作了这么多年。现在东西一丢，你们第一个就来怀疑管理员？就因为我熟悉展柜，就说明东西是我偷的吗？",
+        "en": "I have worked here for years. Something goes missing and you suspect the manager first? Knowing the display cases makes me a thief?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 0,
+      "speaker": {
+        "zh": "亚瑟",
+        "en": "Arthur"
+      },
+      "text": {
+        "zh": "我不知道真正的犯人是谁。但有一件事情我可以告诉你们。黄金面具不是我偷的。这就是我的回答。",
+        "en": "I do not know who the real thief is. But I can tell you one thing. I did not steal the golden mask. That is my answer."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "莉莉",
+        "en": "Lily"
+      },
+      "text": {
+        "zh": "我知道我当时还在博物馆里，但这不能证明我就是犯人。",
+        "en": "I know I was still in the museum. But that does not prove I am the thief."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "莉莉",
+        "en": "Lily"
+      },
+      "text": {
+        "zh": "你们一直在我们三个人里面找犯人，对吧？那我可以很清楚地告诉你们两件事。第一，不是我。第二，也不是马克。",
+        "en": "You're looking for the culprit among the three of us, right? Then I can tell you two things clearly. First, it wasn't me. Second, it wasn't Mark either."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "莉莉",
+        "en": "Lily"
+      },
+      "text": {
+        "zh": "黄金面具不是我偷的，而且也不是马克偷的。",
+        "en": "Neither Mark nor I stole the golden mask."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 1,
+      "speaker": {
+        "zh": "莉莉",
+        "en": "Lily"
+      },
+      "text": {
+        "zh": "既然犯人只有一个……剩下的事情，你们自己应该能想明白。",
+        "en": "Since there is only one thief... You should be able to figure out the rest."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "马克",
+        "en": "Mark"
+      },
+      "text": {
+        "zh": "你们现在是不是最怀疑亚瑟？",
+        "en": "Do you suspect Arthur the most right now?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "我们怀疑每一个有机会接近展柜的人。",
+        "en": "We suspect everyone who had a chance to approach the case."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "马克",
+        "en": "Mark"
+      },
+      "text": {
+        "zh": "他是管理员，熟悉展柜，看起来确实很可疑。",
+        "en": "He's the curator and knows the display cases. He certainly looks suspicious."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "马克",
+        "en": "Mark"
+      },
+      "text": {
+        "zh": "不过我也没什么好躲的，我甚至可以把话说得更直接一点。如果你们最后能证明亚瑟根本没偷黄金面具…… 够清楚了吧？",
+        "en": "But I've got nothing to hide. I can put it even more directly. If you can eventually prove that Arthur didn't steal the golden mask... Clear enough?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "suspect",
+      "stage": "interrogation",
+      "suspectIndex": 2,
+      "speaker": {
+        "zh": "马克",
+        "en": "Mark"
+      },
+      "text": {
+        "zh": "如果亚瑟没有偷黄金面具，那么犯人就是我。",
+        "en": "If Arthur did not steal the golden mask, then I am the thief."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "最后一句好像和前面的不太一样。",
+        "en": "That last statement seems different from the others."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "没错，这叫做条件关系。",
+        "en": "Exactly. It is a conditional statement."
+      },
+      "expression": "smile"
+    },
+    {
+      "role": "officer",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "这种话最重要的，是看前面的条件有没有发生。",
+        "en": "The most important thing about a statement like this is whether its condition actually holds."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "比如马克说：‘如果亚瑟没有偷，那么犯人就是我。’真正能够证明他说谎的情况只有一种。",
+        "en": "For example, Mark says, 'If Arthur didn't steal it, then I am the culprit.' There is only one situation that proves he is lying."
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "亚瑟确实没有偷……可是马克也不是犯人？",
+        "en": "Arthur really did not steal it... But Mark is not the thief either?"
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "没错。条件发生了，可后面的结果没有发生，这句话就是假的。",
+        "en": "Exactly. If the condition holds but the stated result does not, the conditional is false."
+      },
+      "expression": "smile"
+    },
+    {
+      "role": "officer",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "莉莉的话也要注意。不是我偷的，而且也不是马克偷的。",
+        "en": "Pay attention to Lily's statement too: \"Neither Mark nor I stole it.\""
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "player",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "主角",
+        "en": "You"
+      },
+      "text": {
+        "zh": "这里用了‘而且’。",
+        "en": "She joins two claims with \"and.\""
+      },
+      "expression": "normal"
+    },
+    {
+      "role": "officer",
+      "stage": "debrief",
+      "suspectIndex": -1,
+      "speaker": {
+        "zh": "警长",
+        "en": "Chief"
+      },
+      "text": {
+        "zh": "对。‘而且’连接的两件事情必须全部是真的，整句话才是真的。只要其中有一件是假的，整句话就是假的。",
+        "en": "Right. Both claims joined by \"and\" must be true for the whole statement to be true. If even one is false, the whole statement is false."
+      },
+      "expression": "smile"
+    }
+  ],
+  "explanation": {
+    "zh": "若亚瑟是犯人，莉莉的话和马克的条件句都为真；若马克是犯人，亚瑟和马克的话都为真。只有莉莉是犯人时，供词依次为真、假、假，符合一真两假。因此犯人是莉莉。",
+    "en": "If Arthur were guilty, Lily’s statement and Mark’s conditional would both be true. If Mark were guilty, Arthur and Mark would both tell the truth. Only Lily gives true, false, false. Lily stole the mask."
+  }
+}
